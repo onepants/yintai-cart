@@ -1,0 +1,362 @@
+@import "./lib/reset.scss";
+
+html,body,#app,#detail{
+    @include rect(100%, 100%);
+}
+
+#detail{
+    @include flexbox();
+    @include flex-direction(column);
+    position:relative;
+    .mark{
+        @include rect(100%, 100%);
+        background:rgba(0,0,0,0.3);
+        position:fixed;
+        top:40px;
+        left:0;
+        z-index:10000;
+        display:none;
+    }
+    #top{
+        position:absolute;
+        width:35px;
+        height:35px;
+        background:#E0DEDF;
+        border-radius:50%;
+        bottom:60px;
+        right:15px;
+        text-align:center;
+        line-height:38px;
+        display:none;
+        i{
+            font-size:25px;
+            color:white;
+        }
+        
+    }
+    header{
+        @include rect(100%, .4rem);
+        border-bottom:1px solid #ccc;
+        line-height:.4rem;
+        text-align:center;
+        position:relative;
+        z-index:10001;
+        i.left{
+            float:left;
+            margin-left:7px;
+            font-weight:bold;
+        }
+        i.right{
+            float:right;
+            margin-right:10px;
+            font-size:30px;
+            color:#aaa;
+        }
+        .hide{
+            width:110px;
+            height:173px;
+            background:#fff;
+            position:absolute;
+            top:40px;
+            right:0;
+            z-index:1000;
+            display:none;
+            ul{
+                @include rect(100%,100%);
+                li{
+                    @include rect(100%,24%); 
+                    padding:5px;   
+                    position:relative;                  
+                    &:nth-child(1){
+                        a{
+                            border-bottom:1px solid #bbb;
+                        }
+                    }
+                     &:nth-child(2){
+                        a{
+                            border-bottom:1px solid #bbb;
+                        }
+                    }
+                     &:nth-child(3){
+                        a{
+                            border-bottom:1px solid #bbb;
+                        }
+                    }
+                    a{
+                        display:block;
+                        align-items: center;
+                        justify-content: center;                       
+                        color:#666;                         
+                        @include flexbox();
+                        p{
+                            margin-left:25px;
+                        }
+                        i{
+                            position:absolute;
+                            left:8px;
+                            top:5px;  
+                            font-size:21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #contents{
+        @include flex();
+        @include rect(100%,auto); 
+        overflow:auto;           
+        #swiper{
+            position:relative;
+            @include rect(64%,320px); 
+            margin:0 auto;
+            margin-top:10px;
+            .big-pic-wrapper img{
+                width:100%;
+                height:320px;
+            }
+            img#small{
+                max-height:320px;
+            }
+            img.cat{
+                position:absolute;
+                width:34px;
+                height:34px;
+                top:-10px;
+                left:-50px;
+                float:left;
+            }
+        } 
+        .name{
+            width:96%;
+            height:45px;
+            margin:10px auto;
+            .name_left{
+                width:86%;
+                height:100%;
+                float:left;
+                padding-right:7px;
+                font-size:15px;
+                overflow:hidden;
+                text-overflow:ellipsis;                
+            }
+            .name_right{
+                width:14%;
+                height:100%;
+                background:#d12;
+                float:left;   
+                line-height:45px;
+                text-align:center;
+                color:white;
+                font-size:25px;             
+            }
+        }
+        .price{
+            width:96%;
+            height:45px;
+            line-height:45px;
+            margin:0 auto;
+            p{
+               span{
+                   &:nth-child(1){
+                       color:#E5005A;
+                       margin-right:2%;
+                       span{
+                           font-size:25px;
+                       }
+                   }
+                    &:nth-child(2){
+                        margin-right:10%;
+                        text-decoration:line-through;
+                        color:#999;
+                    }
+                    &:nth-child(3){
+                        color:#999;
+                    }
+               } 
+            }            
+        }
+        
+        .productbox{
+            width:100%;
+            height:300px;
+            background:#F1F1F1;
+            overflow:hidden;
+            .product{
+                width:100%;
+                height:280px;
+                margin-top:10px;
+                background:#fff;
+                padding:0 10px;
+                .product-top{
+                    width:100%;
+                    height:39px;
+                    border-bottom:1px dashed #aaa;
+                    line-height:40px;
+                }
+                .product-bottom{
+                    width:100%;
+                    height:240px;
+                    div{
+                        width:100%;
+                        height:40px;
+                        line-height:40px;
+                        &.small{
+                            height:39px;
+                            border-bottom:1px dashed #aaa;
+                            ul{
+                                margin-left:12px;
+                                li{
+                                    float:left;
+                                    height:32px;
+                                    line-height:32px;
+                                    border:1px solid #666;
+                                    padding:0 10px;
+                                    margin-left:10px;
+                                    border-radius:5px;
+                                }
+                            }
+                        }
+                        &:nth-child(6){
+                            div{
+                                width:30px;
+                                height:30px;
+                                border:1px solid #666;
+                                float:left;
+                                text-align:center;
+                                line-height:30px;
+                                color:#999;
+                                border-radius:5px;
+                                &:nth-child(1){
+                                    font-size:50px;
+                                    line-height:24px;
+                                    margin-left:20px;
+                                }
+                                &:nth-child(2){
+                                    font-size:20px;
+                                    border:none;
+                                    color:#666;
+                                }
+                                &:nth-child(3){
+                                    font-size:30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .foot{
+            width:100%;
+            height:188px;
+            background:#ECECEC;
+            .router{
+                width:100%;
+                height:28px;
+                padding:10px 2%;
+                padding-bottom:10px;
+                li{
+                    a{
+                        color:#666;
+                    }    
+                    width:25%;
+                    float:left;
+                    text-align:center;
+                    line-height:28px;
+                }
+            }
+            .login{
+                width:100%;
+                height:50px;
+                margin-top:20px;
+                line-height:50px;
+                border-bottom:1px solid #ccc;
+                span{
+                    float:right;
+                    margin-right:20px;
+                    color:#666;
+                }
+                a{
+                    color:#666;
+                    &:nth-child(1){
+                        margin-left:20px;
+                        margin-right:10px;
+                    }
+                    &:nth-child(2){
+                        margin-left:10px;
+                    }
+                }
+            }
+            .last{
+                width:100%;
+                height:70px;
+                text-align:center;
+                p{
+                    &:nth-child(1){
+                        margin-top:20px;
+                    }
+                    &:nth-child(2){
+                        margin-top:5px;
+                    }
+                }
+            }
+        }
+    }
+    
+    footer{
+        @include rect(100%, .4rem);
+        @include bgcolor(#f66);
+        ul{
+            @include rect(100%,100%);
+            li{
+                float:left;
+                @include flexbox();
+                @include flex-direction(column);
+                @include align-items();
+                @include justify-content();
+                &:nth-child(1){
+                    @include rect(20%,100%);
+                    @include bgcolor(#fff);                   
+                    border-top:1px solid #ddd;
+                    border-bottom:1px solid #ddd;
+                    a{
+                        @include rect(100%,100%);
+                        @include flexbox();
+                        @include flex-direction(column);
+                        @include align-items();
+                        @include justify-content();
+                       i{
+                            font-size:20px;
+                            @include textcolor(#E5004F);
+                        }
+                        p{
+                            margin-top:-5px;
+                            font-size:12px;
+                            @include textcolor(#666);
+                        } 
+                    }
+                    
+                }
+                &:nth-child(2){
+                    @include rect(40%,100%);
+                    @include bgcolor(#E5004F);
+                    @include textcolor(#fff);
+                }
+                &:nth-child(3){
+                    @include rect(40%,100%);
+                    @include bgcolor(#FF7039);
+                    @include textcolor(#fff);
+                }
+            }
+        }
+    }
+
+    li.red{
+        border:1px solid #E5004F !important;
+        color:#E5004F;
+    }
+    i.red{
+        color:#E5004F !important;
+    }
+}

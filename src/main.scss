@@ -1,0 +1,70 @@
+@import "./lib/reset.scss";
+
+html,body,#root,.container{
+    @include rect(100%, 100%);
+}
+
+.container{
+    @include flexbox();
+    @include flex-direction(column);
+    
+    header#header{
+        @include rect(100%, 0.44rem);
+        border-bottom:1px solid #999;
+    }
+    #content{
+        @include flex();
+        @include rect(100%, 100%);
+        .left{
+            @include rect(20%, 100%);
+            float:left;
+            li{
+                text-align:center;
+            }
+            a{
+                @include textcolor(#333);
+                &.active{
+                    @include textcolor(#f66);
+                }
+            }
+        }
+        .right{
+            @include rect(80%, 100%);
+            float:left;
+            a{
+                @include textcolor(#666);
+            }
+        }
+
+    }
+    footer#footer{
+        @include rect(100%, 0.5rem);
+        @include bgcolor(#eee);
+        
+        ul{
+            @include rect(100%, 100%);
+            @include flexbox();
+            li{
+                @include flex();
+                @include rect(auto, 100%);
+                a{
+                    @include rect(100%, 100%);
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include align-items();
+                    @include justify-content();
+                    @include textcolor(#333);
+                    &.active{
+                        @include textcolor(#f66);
+                    }
+                    i{
+                        font-size:.2rem;
+                    }
+                    p{
+                        margin-top:-3px;
+                    } 
+                }              
+            }
+        }
+    }
+}
